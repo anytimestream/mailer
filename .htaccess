@@ -1,0 +1,9 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteBase /
+RewriteRule favicon.ico favicon.ico [NC,L]
+RewriteRule robots.txt robots.txt [NC,L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^(.*)$ dispatcher.php [NC,L]
+

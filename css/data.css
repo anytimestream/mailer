@@ -1,0 +1,510 @@
+/* 
+    Document   : data
+    Created on : Feb 18, 2011, 12:40:16 PM
+    Author     : Norman
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+img
+{  border-style: none;
+}
+form.normosa-ui-form h4 {
+    color: #3a5f7f;
+    font-size: 17px;
+    margin: 10px 0 20px 155px;
+    font-weight: normal;
+}
+form.normosa-ui-form {
+    width: 800px;
+}
+form.normosa-ui-form button.submit{
+    height: 30px;
+    border: #a7a7a7 solid 1px;
+    background-color: #ececec;
+    background: -webkit-linear-gradient(#fefefe,#dbdbdb);
+    background: -moz-linear-gradient(#fefefe,#dbdbdb);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe',endColorstr='#dbdbdb');
+    text-shadow: white 0 1px 0;
+    font-size: 12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius:23px;
+    border-radius: 2px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+form.normosa-ui-form button.submit:hover {
+    opacity: 0.8;
+    border: #a7a7a7 solid 1px;
+    background: -webkit-linear-gradient(#fefefe,#bcbcbc);
+    background: -moz-linear-gradient(#fefefe,#bcbcbc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe',endColorstr='#bcbcbc');
+    cursor: pointer;
+}
+.normosa-ui-form div.row {
+    margin-bottom: 10px;
+}
+.normosa-ui-form div.row span.error{
+    color: #c02;
+    font-size: 12px; 
+    line-height: 20px; 
+    height: 20px
+}
+.normosa-ui-form div.row p.msg {
+    border: 1px solid #ff0000;
+    margin-left: 155px;
+    float: left;
+    padding: 5px 8px;
+    color: #990099;
+    background-color: #FFFFCC;
+}
+.normosa-ui-form div.row p.msg b{
+    display: block;
+    margin-bottom: 5px;
+    color: #ff0000;
+    border-bottom: 1px solid #ff0000;
+    font-size: 15px;
+}
+.normosa-ui-form div.row p.msg2 {
+    margin-left: 155px;
+    float: left;
+    padding: 5px 5px 5px 23px;
+    color: #000;
+    border: 1px solid lime;
+    background: honeyDew  url('../images/btn-success.png') 4px center no-repeat;
+}
+form.mailist-ui-form h4 {
+    border-bottom: 1px solid #141414;
+    color: #777;
+    padding: 5px 0 10px 130px;
+    font-size: 18px;
+    font-weight: 300;
+    text-shadow: 0 -1px 0 #000000;
+}
+form.mailist-ui-form button.submit{
+    height: 30px;
+    border: #a7a7a7 solid 1px;
+    background-color: #ececec;
+    background: -webkit-linear-gradient(#fefefe,#dbdbdb);
+    background: -moz-linear-gradient(#fefefe,#dbdbdb);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe',endColorstr='#dbdbdb');
+    text-shadow: white 0 1px 0;
+    font-size: 12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius:23px;
+    border-radius: 2px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+form.mailist-ui-form button.submit:hover {
+    opacity: 0.8;
+    border: #a7a7a7 solid 1px;
+    background: -webkit-linear-gradient(#fefefe,#bcbcbc);
+    background: -moz-linear-gradient(#fefefe,#bcbcbc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe',endColorstr='#bcbcbc');
+    cursor: pointer;
+}
+.mailist-ui-form div.row {
+    margin-bottom: 10px;
+}
+.mailist-ui-form div.row span.error{
+    color: yellow;
+    font-size: 12px; 
+    line-height: 20px; 
+    height: 20px;
+}
+.mailist-ui-form div.row p.msg {
+    border: 1px solid #ff0000;
+    margin-left: 155px;
+    float: left;
+    padding: 5px 8px;
+    color: #990099;
+    background-color: #FFFFCC;
+}
+.mailist-ui-form div.row p.msg b{
+    display: block;
+    margin-bottom: 5px;
+    color: #ff0000;
+    border-bottom: 1px solid #ff0000;
+    font-size: 15px;
+}
+.mailist-ui-form div.row p.msg2 {
+    margin-left: 155px;
+    float: left;
+    padding: 5px 5px 5px 23px;
+    color: #000;
+    border: 1px solid lime;
+    background: honeyDew  url('../images/btn-success.png') 4px center no-repeat;
+}
+.normosa-ui-form input{
+    height: 22px;
+    border: 1px solid #6f9bc0;
+    padding: 2px;
+}
+.normosa-ui-form textarea{
+    border: 1px solid #6f9bc0;
+    padding: 2px;
+}
+.normosa-ui-form select{
+    height: 27px;
+    border: 1px solid #6f9bc0;
+    padding: 2px;
+}
+.normosa-ui-form input:focus, form select:focus, form textarea{
+    outline: 0;
+}
+.normosa-ui-form .label{
+    text-align: right;
+    line-height: 28px;
+    padding: 1px;
+    display: inline-block;
+    color: #514946;
+}
+.normosa-ui-form button {
+    line-height: 25px;
+    padding: 0 5px;
+}
+.normosa-ui-form .validator {
+    padding: 0 4px;
+    border: 1px solid #999;
+    background: #fff;
+    color: #444;
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.mailist-ui-form input{
+    height: 24px;
+    border: 1px solid #eee;
+    padding: 2px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.mailist-ui-form select{
+    height: 32px;
+    border: 1px solid #eee;
+    padding: 2px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.mailist-ui-form input:focus, form select:focus, form textarea{
+    outline: 0;
+}
+.mailist-ui-form .label{
+    text-align: right;
+    line-height: 28px;
+    padding: 1px;
+    display: inline-block;
+    width: 130px;
+    color: #777;
+}
+.mailist-ui-form button {
+    line-height: 25px;
+    padding: 0 5px;
+}
+.mailist-ui-form .validator {
+    padding: 0 4px;
+    border: 1px solid #999;
+    background: #fff;
+    color: #444;
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.autosuggest {
+    border-top: 0;
+    list-style:none;
+    list-style-type:none;
+    list-style-image:none;
+    display: none;
+    border: 1px solid #999;
+    z-index: 500;
+}
+.autosuggest li a{
+    background: #fff;
+    color: #333;
+    line-height: 25px;
+    padding: 0 4px;
+    cursor: pointer;
+    display: block;
+    font-size: 13px;
+}
+.autosuggest li a:hover {
+    background: blue;
+    color: #fff;
+}
+.w10 {
+    width: 10px;
+}
+.w20 {
+    width: 20px;
+}
+.w30 {
+    width: 30px;
+}
+.w40 {
+    width: 40px;
+}
+.w50 {
+    width: 50px;
+}
+.w60 {
+    width: 60px;
+}
+.w70 {
+    width: 70px;
+}
+.w80 {
+    width: 80px;
+}
+.w90 {
+    width: 90px;
+}
+.w100 {
+    width: 100px;
+}
+.w110 {
+    width: 110px;
+}
+.w120 {
+    width: 120px;
+}
+.w130 {
+    width: 130px;
+}
+.w140 {
+    width: 140px;
+}
+.w150 {
+    width: 150px;
+}
+.w160 {
+    width: 160px;
+}
+.w170 {
+    width: 170px;
+}
+.w180 {
+    width: 180px;
+}
+.w190 {
+    width: 190px;
+}
+.w200 {
+    width: 200px;
+}
+.w220 {
+    width: 220px;
+}
+.w240 {
+    width: 240px;
+}
+.w260 {
+    width: 260px;
+}
+.w280 {
+    width: 280px;
+}
+.w300 {
+    width: 300px;
+}
+.w320 {
+    width: 320px;
+}
+.w340 {
+    width: 340px;
+}
+.w360 {
+    width: 360px;
+}
+.w380 {
+    width: 380px;
+}
+.w400 {
+    width: 400px;
+}
+.w450 {
+    width: 450px;
+}
+.w500 {
+    width: 500px;
+}
+.w550 {
+    width: 550px;
+}
+.w600 {
+    width: 600px;
+}
+.w650 {
+    width: 650px;
+}
+.w700 {
+    width: 700px;
+}
+.w750 {
+    width: 750px;
+}
+.w800 {
+    width: 800px;
+}
+.w850 {
+    width: 850px;
+}
+.w900 {
+    width: 900px;
+}
+.w950 {
+    width: 950px;
+}
+.w1000 {
+    width: 1000px;
+}
+.h10 {
+    height: 10px;
+}
+.h20 {
+    height: 20px;
+}
+.h30 {
+    height: 30px;
+}
+.h40 {
+    height: 40px;
+}
+.h50 {
+    height: 50px;
+}
+.h60 {
+    height: 60px;
+}
+.h70 {
+    height: 70px;
+}
+.h80 {
+    height: 80px;
+}
+.h90 {
+    height: 90px;
+}
+.h100 {
+    height: 100px;
+}
+.h110 {
+    height: 110px;
+}
+.h120 {
+    height: 120px;
+}
+.h130 {
+    height: 130px;
+}
+.h140 {
+    height: 140px;
+}
+.h150 {
+    height: 150px;
+}
+.h160 {
+    height: 160px;
+}
+.h170 {
+    height: 170px;
+}
+.h180 {
+    height: 180px;
+}
+.h190 {
+    height: 190px;
+}
+.h200 {
+    height: 200px;
+}
+.h220 {
+    height: 220px;
+}
+.h240 {
+    height: 240px;
+}
+.h260 {
+    height: 260px;
+}
+.h280 {
+    height: 280px;
+}
+.h300 {
+    height: 300px;
+}
+.h320 {
+    height: 320px;
+}
+.h340 {
+    height: 340px;
+}
+.h360 {
+    height: 360px;
+}
+.h380 {
+    height: 380px;
+}
+.h400 {
+    height: 400px;
+}
+.h450 {
+    height: 450px;
+}
+.h500 {
+    height: 500px;
+}
+.h550 {
+    height: 550px;
+}
+.h600 {
+    height: 600px;
+}
+.h650 {
+    height: 650px;
+}
+.h700 {
+    height: 700px;
+}
+.h750 {
+    height: 750px;
+}
+.h800 {
+    height: 800px;
+}
+.h850 {
+    height: 850px;
+}
+.h900 {
+    height: 900px;
+}
+.h950 {
+    height: 950px;
+}
+.h1000 {
+    height: 1000px;
+}
+.h23 {
+    height: 23px;
+}
+.w205 {
+    width: 205px;
+}
+
+
+

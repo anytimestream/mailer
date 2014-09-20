@@ -1,0 +1,134 @@
+.journal-name {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: right;
+    padding: 15px 0 7px 0;
+    font-size: 28px;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+.journal-header-wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 15px 0 0 0;
+}
+ul.journal {
+    display: block;
+    height: 26px;
+}
+ul.journal li {
+    float: left;
+    overflow: hidden;
+    list-style: none;
+    list-style-image: none;
+    list-style-type: none;
+    padding: 0 6px;
+}
+ul.journal li a{
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    font: 13px Tahoma, Verdana, Arial, sans-serif;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -o-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    background-image: url('../images/content-bg.png');
+}
+ul.journal li a.active{
+    background: #fff;
+    color: black;
+}
+ul.journal .first{
+    padding-left: 20px;
+}
+.link{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.article {
+    margin-bottom: 10px;
+}
+.article img {
+    float: left;
+    width: 100px;
+    padding: 2px;
+    height: 110px;
+    border: 1px solid #E1E1E1;
+    margin-right: 10px;
+}
+.article span{
+    display: block;
+    padding: 2px 0 3px 0;
+    font-family: Tahoma, helvetica, arial, sans-serif;
+}
+.article div.content{
+    float: right;
+    width: 505px;
+}
+.article span a{
+    padding: 0 2px;
+    color: #0e388e;
+    text-decoration: none;
+    font-weight: 500;
+}
+.article span a:hover{
+    color: #000;
+}
+.article .title {
+    color: #444;
+    font-size: 12px;
+    font-weight: 600;
+}
+.article .type {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+}
+.article .authors {
+    font-weight: 500;
+    font-size: 13px;
+    color: #333;
+}
+.article .journal {
+    font-weight: bold;
+    font-size: 12px;
+    color: #333;
+}
+.page-header {
+    color: #3A3A3A;
+    margin: 10px 0;
+}
+.pagination {
+    margin: 5px 0;
+}
+.pagination a{
+    text-decoration: none;
+    text-align: center;
+    padding: 4px 9px;
+    font-size: 11px;
+    display: inline-block;
+    color: #133f6c;
+    border-radius: 3px;
+}
+.pagination a.active{
+    color: #fff;
+    background: #e00000;
+}
+#articles_tabs {
+    float: left;
+    width: 650px;
+}
+#articles_tabs h3{
+    padding-left: 8px;
+    font-size: 18px;
+}
+.journal-image{
+    width: 219px;
+    border: 1px solid #E1E1E1;
+}

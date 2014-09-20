@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    color:#333;
+    font-family: tahoma,Verdana, helvetica, arial, sans-serif;
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+h4 {
+    color: #5b83a7;
+    padding: 8px 10px;
+    font-size: 18px;
+    background: #deeaf6;
+    border: 1px solid #85b3dc;
+    border-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+}
+.error {
+    height: 20px;
+    color: #c02;
+}
+#content {
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    margin: -125px 0 0 -175px;
+    height: 205px;
+    position: absolute;
+    box-shadow: 5px 5px 5px #ccc;
+}
+#login span {
+    margin-top: 10px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    color: #333;
+}
+#login span a{
+    text-decoration: none;
+    color:#c00;
+    font-size: 11px;
+    font-weight: bold;
+}
+#login label {
+    text-align: left;
+    line-height: 22px;
+    height: 22px;
+    width: 100px;
+    text-align: right;
+    padding-right: 5px;
+    font-size: 12px;
+    display: inline-block;
+    color: #333;
+}
+#login .btn{
+    height: 30px;
+    border: #a7a7a7 solid 1px;
+    background-color: #ececec;
+    background: -webkit-linear-gradient(#fefefe,#dbdbdb);
+    background: -moz-linear-gradient(#fefefe,#dbdbdb);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe',endColorstr='#dbdbdb');
+    text-shadow: white 0 1px 0;
+    font-size: 12px;
+    padding: 5px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius:23px;
+    border-radius: 2px;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background, 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+}
+#login .btn:hover {
+    opacity: 0.8;
+    border: #a7a7a7 solid 1px;
+    background: -webkit-linear-gradient(#fefefe,#bcbcbc);
+    background: -moz-linear-gradient(#fefefe,#bcbcbc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe',endColorstr='#bcbcbc');
+    cursor: pointer;
+}
+#login input {
+    height: 20px;
+    border: 1px solid #6f9bc0;
+    padding: 2px;
+    width: 170px;
+}
+#login input:focus {
+    outline: none;
+}
+.row{
+    margin-bottom: 7px;
+}
+form {
+    border: 1px solid #85b3dc;
+    padding: 20px 0;
+}
