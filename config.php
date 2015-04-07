@@ -11,17 +11,7 @@ define('AWS_SECRET_ACCESS_KEY', '+kSSVdLExJ4opvF2e82lxoPKn8lzCwGjHbG7PjPA');
 
 define('DEBUG_MODE', false);
 
-if (DEBUG_MODE) {
-    define('DB_HOST', 'localhost');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', 'mysql');
-    define('CDN_CONTEXT_PATH', 'http://' . $_SERVER['SERVER_NAME']);
-} else {
-    define('DB_HOST', 'mail.cguushyurm93.us-east-1.rds.amazonaws.com');
-    define('DB_USER', 'mail');
-    define('DB_PASSWORD', 'adminadmin21');
-    define('CDN_CONTEXT_PATH', 'http://s3.amazonaws.com/cdn.mailer.apps.iportalworks.com');
-}
+
 
 define('DB_USERNAME', '');
 define('BASE_PATH', dirname(__FILE__));
