@@ -129,13 +129,26 @@ class MailingListService {
                 $mailingListReport = new MailingListReport();
                 $mailingListReport->setValue('mailing_list', $mailingList->getValue('id'));
                 $account = $pm->getObjectByColumn('Account', 'no', $mailingList->getValue('account'));
-                $list = explode(',', strtolower($_POST['recipients']));
+                $list = explode(',', strtolower(trim($_POST['recipients'])));
                 for ($i = 0; $i < count($list); $i++) {
                     if (strpos($list[$i], '@') != false) {
                         try {
                             $subscriber = new Subscriber();
                             $subscriber->setValue('mailing_list', $mailingList->getValue('id'));
-                            $subscriber->setValue('email', trim($list[$i]));
+                            $email = trim($list[$i]);
+                            $email = str_replace("'", "", $email);
+                            $email = str_replace(";", "", $email);
+                            $email = str_replace("/", "", $email);
+                            $email = str_replace("\\", "", $email);
+                            $email = str_replace("+", "", $email);
+                            $email = str_replace("&", "", $email);
+                            $email = str_replace("*", "", $email);
+                            $email = str_replace("#", "", $email);
+                            $email = str_replace("!", "", $email);
+                            if(substr($email, strlen($email) - 1, strlen($email)) == '.'){
+                                $email = substr($email, 0, strlen($email) - 1);
+                            }
+                            $subscriber->setValue('email', $email);
                             $subscriber->setValue('account', $mailingList->getValue('account'));
                             $pm->save($subscriber);
                         } catch (Exception $ex) {

@@ -6,7 +6,7 @@ class AccountService {
         try {
             $size = 20;
             $index = 1;
-            $orderBy = "name";
+            $orderBy = "a.name";
             $values = array();
             if (isset($_GET['page'])) {
                 $index = $_GET['page'];
@@ -16,7 +16,17 @@ class AccountService {
             }
             $pm = PersistenceManager::NewPersistenceManager();
             $query = $pm->getQueryBuilder('Account');
-            $sql = "select * from " . Account::GetDSN() . " order by " . $orderBy;
+            $tsql = "create temporary table " . Account::GetDSN() . "_smtp_report (
+                        account_no varchar(11) not null,
+                        smtp int(11) not null,
+                        primary key (account_no)
+                      );
+                      insert into " . Account::GetDSN() . "_smtp_report 
+                      select account,count(*) 
+                      from " . SMTPAccount::GetDSN() . " where status = 1 group by account;";
+            $query->execute($tsql, array());
+            
+            $sql = "select a.id,a.name,a.no,a.retention,a.creation_date,a.last_changed,s.smtp from " . Account::GetDSN() . " as a inner join ".Account::GetDSN()."_smtp_report as s on a.no = s.account_no order by " . $orderBy;
             $csql = 'select count(*) from ' . Account::GetDSN();
             $row = $query->execute($csql, $values)->fetch();
             $total = $row[0];

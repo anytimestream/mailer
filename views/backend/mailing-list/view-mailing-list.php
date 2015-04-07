@@ -17,9 +17,9 @@
         </script>
     </div>
     <div class="scrollpane">
-        <div class=content style="min-width:1300px;">
+        <div class=content style="min-width:1340px;">
             <div class="th">
-                <span class="td w200" style="text-align:center">Account</span>
+                <span class="td w240" style="text-align:center">Account</span>
                 <span class="td w150" style="text-align:center">Subject</span>
                 <span class="td w260" style="text-align:center">From</span>
                 <span class="td w150" style="text-align:center">Name</span>
@@ -42,7 +42,7 @@
                 ?>
                 <div class="tr" <?php echo $style ?> id="<?php echo $mailingList[$i]->getValue('id') ?>" contextmenu="contextmenu">
                     <div class="content">
-                        <span class="td w200"<?php echo ucwords($mailingList[$i]->getValue('account')) ?>><?php echo ucwords($mailingList[$i]->getValue('account')) ?></span>
+                        <span class="td w240" title="<?php echo ucwords($mailingList[$i]->getValue('account')) ?>"><?php echo ucwords($mailingList[$i]->getValue('account')) ?></span>
                         <span class="td w150" title="<?php echo ucwords($mailingList[$i]->getValue('subject')) ?>"><?php echo ucwords($mailingList[$i]->getValue('subject')) ?></span>
                         <span class="td w260" title="<?php echo strtolower($mailingList[$i]->getValue('sender')) ?>"><?php echo strtolower($mailingList[$i]->getValue('sender')) ?></span>
                         <span class="td w150" title="<?php echo ucwords($mailingList[$i]->getValue('name')) ?>"><?php echo ucwords($mailingList[$i]->getValue('name')) ?></span>

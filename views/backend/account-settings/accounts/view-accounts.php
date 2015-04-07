@@ -20,6 +20,7 @@
                 <span class="td w150" style="text-align:center">N0</span>
                 <span class="td w300" style="text-align:center">Name</span>
                 <span class="td w120" style="text-align:center">Retention Period</span>
+                <span class="td w120" style="text-align:center">Active SMTPs</span>
                 <span class="td w120" style="text-align:center">Creation Date</span>
                 <span class="td w120" style="text-align:center;border:0">Last Changed</span>
             </div>
@@ -47,6 +48,7 @@
                             }
                             ?>
                         </span>
+                        <span class="td w120" style="text-align:center"><?php echo $accounts[$i]->getValue('smtp') ?></span>
                         <span class="td w120" style="text-align:center"><?php echo Date::convertFromMySqlDate($accounts[$i]->getValue('creation_date')) ?></span>
                         <span class="td w120" style="text-align:center;border:0"><?php echo Date::convertFromMySqlDate($accounts[$i]->getValue('last_changed')) ?></span>
                     </div>

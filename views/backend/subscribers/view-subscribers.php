@@ -1,7 +1,7 @@
 <div class="normosa-ui-datatable" id="datatable">
     <div class="toolbar">
         <?php
-        require BASE_PATH . '/views/backend/includes/name-search.php';
+        require BASE_PATH . '/views/backend/includes/date-search.php';
         ?>
     </div>
     <div class="datasource">

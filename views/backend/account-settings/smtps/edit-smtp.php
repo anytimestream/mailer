@@ -33,6 +33,7 @@
         <select inputtype="_default" id="provider" name="provider" class="textbox w140" style="width: 200px" autocomplete="off">
             <option value="-">- Select -</option>
             <option <?php if (strcasecmp($_GET['smtp-account']->getValue('provider'), 'Gmail') == 0) { ?>selected <?php } ?>>Gmail</option>
+            <option <?php if (strcasecmp($_GET['smtp-account']->getValue('provider'), 'Appengine') == 0) { ?>selected <?php } ?>>Appengine</option>
             <option <?php if (strcasecmp($_GET['smtp-account']->getValue('provider'), 'Others') == 0) { ?>selected <?php } ?>>Others</option>
         </select>
         <span class="error"><?php echo $_GET['smtp-account']->validationReport('provider') ?></span>

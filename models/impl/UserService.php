@@ -134,8 +134,8 @@ class UserService {
             }
             $pm = PersistenceManager::getConnection();
             $query = $pm->getQueryBuilder('User');
-            $sql = 'select id,password,status from ' . User::GetDSN() . ' where username = ?';
-            $values = array($userName);
+            $sql = 'select id,password,status from ' . User::GetDSN() . ' where username = ? and status = ?';
+            $values = array($userName, 1);
             $logins = $query->executeQuery($sql, $values, 0, 1);
             if ($logins->count() > 0 && $logins[0]->getValue('status') == 1 && strcmp($logins[0]->getValue('password'), md5('iwebportal' . $password . $logins[0]->getValue('id'))) == 0) {
 

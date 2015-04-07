@@ -17,10 +17,10 @@ if (DEBUG_MODE) {
     define('DB_PASSWORD', 'mysql');
     define('CDN_CONTEXT_PATH', 'http://' . $_SERVER['SERVER_NAME']);
 } else {
-    define('DB_HOST', '54.86.187.53');
+    define('DB_HOST', 'mail.cguushyurm93.us-east-1.rds.amazonaws.com');
     define('DB_USER', 'mail');
     define('DB_PASSWORD', 'adminadmin21');
-    define('CDN_CONTEXT_PATH', 'http://cdn.' . $_SERVER['SERVER_NAME']);
+    define('CDN_CONTEXT_PATH', 'http://s3.amazonaws.com/cdn.mailer.apps.iportalworks.com');
 }
 
 define('DB_USERNAME', '');

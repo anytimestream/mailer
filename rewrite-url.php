@@ -1,5 +1,5 @@
 <?php
-$url = $_SERVER['REQUEST_URI'];
+$url = strtok($_SERVER['REQUEST_URI'], "?");
 
 $url_hash_table = array();
 $url_hash_table[1] = 'a';

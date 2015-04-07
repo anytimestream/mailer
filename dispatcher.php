@@ -19,7 +19,9 @@ $viewControllers[] = array('path' => '/logout', 'controller' => 'logout-controll
 
 //cron
 $viewControllers[] = array('path' => '/cron-job/send-verification/*', 'controller' => 'cron/send-verification-controller.php');
-$viewControllers[] = array('path' => '/cron-job/send-mail-appe/*', 'controller' => 'cron/send-mail-appe-controller.php');$viewControllers[] = array('path' => '/cron-job/patch/*', 'controller' => 'cron/patch.php');
+$viewControllers[] = array('path' => '/cron-job/send-mail-appe/*', 'controller' => 'cron/send-mail-appe-controller.php');
+$viewControllers[] = array('path' => '/cron-job/send-appengine/*', 'controller' => 'cron/send-appengine-controller.php');
+//$viewControllers[] = array('path' => '/cron-job/patch/*', 'controller' => 'cron/patch.php');
 $viewControllers[] = array('path' => '/cron-job/clear-empty/*', 'controller' => 'cron/clear-empty-controller.php');
 $viewControllers[] = array('path' => '/cron-job/clear-attachments/*', 'controller' => 'cron/clear-attachments-controller.php');
 $viewControllers[] = array('path' => '/cron-job/log-report/*', 'controller' => 'cron/log-report-controller.php');

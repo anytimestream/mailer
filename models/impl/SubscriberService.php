@@ -7,25 +7,36 @@ class SubscriberService {
             $size = 20;
             $index = 1;
             $orderBy = " order by creation_date desc";
-            $values = array();
+            $values = array(date('Y-m-d') . ' 00:00:00', date('Y-m-d') . ' 23:59:59');
             $criterias = array('Account', 'Email');
-            $url_search = "";
+            $url_search = 'from=' . date('d/m/Y');
+            $url_search .= '&to=' . date('d/m/Y');
             if (isset($_GET['page'])) {
                 $index = $_GET['page'];
             }
             if (isset($_GET['order_by'])) {
                 $orderBy = $_GET['order_by'];
             }
+            if (isset($_GET['from']) && isset($_GET['to'])) {
+                $from = explode("/", $_GET['from']);
+                $to = explode("/", $_GET['to']);
+                if (count($from) == 3 && count($to) == 3) {
+                    $values[0] = $from[2] . '-' . Util::AddLeadingZeros($from[1], 2) . '-' . Util::AddLeadingZeros($from[0], 2) . ' 00:00:00';
+                    $values[1] = $to[2] . '-' . Util::AddLeadingZeros($to[1], 2) . '-' . Util::AddLeadingZeros($to[0], 2) . ' 23:59:59';
+                    $url_search = 'from=' . $_GET['from'];
+                    $url_search .= '&to=' . $_GET['to'];
+                }
+            }
             $pm = PersistenceManager::NewPersistenceManager();
             $query = $pm->getQueryBuilder('Subscriber');
-            $sql = "select account,id,email,sent,backlist,verified,creation_date,last_changed from " . Subscriber::GetDSN() . $orderBy;
-            $csql = 'select count(*) from ' . Subscriber::GetDSN();
+            $sql = "select account,id,email,sent,backlist,verified,creation_date,last_changed from " . Subscriber::GetDSN()." where creation_date between ? and ?" . $orderBy;
+            $csql = 'select count(*) from ' . Subscriber::GetDSN()." where creation_date between ? and ?";
             if (isset($_GET['criteria']) && strcasecmp($_GET['criteria'], "any") != 0) {
-                $url_search = "criteria=" . $_GET['criteria'] . "&value=" . $_GET['value'];
+                $url_search .= "&criteria=" . $_GET['criteria'] . "&value=" . $_GET['value'];
                 $values[] = urldecode($_GET['value']);
                 $query = $pm->getQueryBuilder('Subscriber');
-                $sql = "select account,id,email,sent,backlist,verified,creation_date,last_changed from " . Subscriber::GetDSN() . " where " . $_GET['criteria'] . " = ?" . $orderBy;
-                $csql = 'select count(*) from ' . Subscriber::GetDSN() . " where " . $_GET['criteria'] . " = ?";
+                $sql = "select account,id,email,sent,backlist,verified,creation_date,last_changed from " . Subscriber::GetDSN() . " where creation_date between ? and ? and " . $_GET['criteria'] . " = ?" . $orderBy;
+                $csql = 'select count(*) from ' . Subscriber::GetDSN() . " where creation_date between ? and ? and " . $_GET['criteria'] . " = ?";
             }
             $row = $query->execute($csql, $values)->fetch();
             $total = $row[0];

@@ -5,7 +5,7 @@ set_time_limit(0);
 $pm = PersistenceManager::NewPersistenceManager();
 $smtpQuery = $pm->getQueryBuilder('SMTPAccount');
 
-$smtpSql = "select host,username from " . SMTPAccount::GetDSN() . " where account = ? and provider = ? and status = ?";
+$smtpSql = "select id,host,username from " . SMTPAccount::GetDSN() . " where account = ? and provider = ? and status = ?";
 $smtpAccounts = $smtpQuery->executeQuery($smtpSql, array($_GET['account'], "Gmail", 1), 0, 50);
 
 $query = $pm->getQueryBuilder('Subscriber');
@@ -31,18 +31,21 @@ for ($i = 0; $i < $subscribers->count() && $i < $smtpAccounts->count(); $i++) {
             $sql = "update " . MailingListReport::GetDSN() . " set valid = valid - 1, invalid = invalid + 1 where mailing_list = ?";
             $query->execute($sql, array($subscribers[$i]->getValue('mailing_list')));
             $pm->commit();
+        } else if (strpos($result, "/sendappengine") > 0) {
+            $sql = "delete from " . SMTPAccount::GetDSN() . " where id = ?";
+            $query->execute($sql, array($smtpAccounts[$i]->getValue("id")));
         } else {
             $sendMailError = new SendMailError();
             $sendMailError->setValue("type", "Send Mail");
             $sendMailError->setValue("email", "chat4zeal@yahoo.com");
-            $sendMailError->setValue("error", $result);
+            $sendMailError->setValue("error", $smtpAccounts[$i]->getValue("host") . " - " . $result);
             $pm->save($sendMailError);
         }
     } catch (Exception $ex) {
         $sendMailError = new SendMailError();
         $sendMailError->setValue("type", "Send Mail");
         $sendMailError->setValue("email", "chat4zeal@yahoo.com");
-        $sendMailError->setValue("error", $ex->getMessage());
+        $sendMailError->setValue("error", $smtpAccounts[$i]->getValue("host") . " - " . $ex->getMessage());
         $pm->save($sendMailError);
     }
 }

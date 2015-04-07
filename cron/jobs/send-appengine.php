@@ -10,7 +10,7 @@ $pm = PersistenceManager::NewPersistenceManager();
 $smtpQuery = $pm->getQueryBuilder('SMTPAccount');
 
 $smtpSql = "select host,username from " . SMTPAccount::GetDSN() . " where account = ? and provider = ? and status = ?";
-$smtpAccounts = $smtpQuery->executeQuery($smtpSql, array($_GET['account'], "Gmail", 1), 0, 50);
+$smtpAccounts = $smtpQuery->executeQuery($smtpSql, array($_GET['account'], "Appengine", 1), 0, 50);
 
 $query = $pm->getQueryBuilder('Subscriber');
 $sql = "select s.email,s.id,m.body,m.attachments,m.subject,m.sender,m.name from " . Subscriber::GetDSN() . " as s inner join " . MailingList::GetDSN() . " as m on s.mailing_list = m.id where s.account = ? and s.verified = ? and s.backlist = ? and s.sent = ? order by m.creation_date";

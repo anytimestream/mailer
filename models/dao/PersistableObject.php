@@ -283,8 +283,7 @@ class NumberValidationRule extends ValidationRule {
         if (is_numeric($value)) {
             if ($value < $this->min || $value > $this->max)
                 return array('property' => $this->property, 'error' => $this->error);
-        }
-        else
+        } else
             return array('property' => $this->property, 'error' => $this->error);
     }
 
